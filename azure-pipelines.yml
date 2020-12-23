@@ -17,5 +17,3 @@ steps:
     scriptLocation: 'scriptPath'
     scriptPath: './find-tf-expiring-resources.sh'
     arguments: '1y'
-
-container:
