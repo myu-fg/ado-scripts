@@ -10,9 +10,12 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'fg-myu-dev-pipeline-connection'
+    scriptType: 'bash'
+    scriptLocation: 'scriptPath'
+    scriptPath: './find-tf-expiring-resources.sh'
+    arguments: '1y'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    az login 
-  displayName: 'Run a multi-line script'
+container:
